@@ -269,8 +269,10 @@ form input{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 100;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     cursor: pointer;
+    transition: opacity 0.7s ease 0s;
 }
 .modal__block {
     width: 784px;
@@ -317,6 +319,7 @@ form input{
 .visible{
     display: block;
     opacity: 1;
+    visibility: visible;
 }
 @media (max-width:767px) {
     .main__form .main__row {

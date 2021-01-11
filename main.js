@@ -22,13 +22,14 @@ function testFunction() {
     let arrow2 = document.querySelector('.arrow2');
     let error = document.querySelector(".error")
     let formBtn = document.querySelector(".form__btn")
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     formFullName.value.length>0 ? add(arrow) : remove(arrow)
     formFirstName.value.length>0 ? add(arrow2) : remove(arrow2)
-    formEmail.value.length>0 ? remove(error,formEmail) : add(error,formEmail)
-    if(formFullName.value.length>0&&formFirstName.value.length>0&&formEmail.value.length>0){
+    formEmail.value.length>0&&reg.test(formEmail.value) ? remove(error,formEmail) : add(error,formEmail)
+    if(formFullName.value.length>0&&formFirstName.value.length>0&&formEmail.value.length>0&&reg.test(formEmail.value)){
         formBtn.removeAttribute('disabled','disabled')
         formBtn.classList.remove('disabled')
-    } else if(formFullName.value.length>0||formFirstName.value.length>0||formEmail.value.length>0){
+    } else if(formFullName.value.length>0||formFirstName.value.length>0||formEmail.value.length>0||reg.test(formEmail.value)){
         formBtn.classList.add('disabled')
         formBtn.setAttribute('disabled','disabled')
     }
