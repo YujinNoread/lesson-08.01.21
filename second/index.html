@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MeetUp</title>
+</head>
+<body>
+<main class="main">
+    <div class="container">
+        <div class="main__row default">
+            <div class="main__form">
+                <div class="main__logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="main__login">
+                    <form method="LINK" action="third/index.html" class="main__form-login">
+                        <div class="form__title">Try <span class="pink">Met Jip</span> for free</div>
+                        <div class="form__text">Try Met Jip for free for 14 days. Do you already have a login<br> than you can. <a href="../index.html">Login here</a></div>
+                        <div class="main__row">
+                            <div class="main__form__body">
+                                <label for="company">Company</label>
+                                <input type="text" class="form__company" id="company" oninput="testFunction()">
+                                <div class="arrow"></div>
+                                <label for="phonenumber">Phone number</label>
+                                <input type="text" class="form__phonenumber" id="phonenumber" onkeyup="this.value = this.value.replace(/[^0-9 ]+$/g,'');" value="+380" oninput="testFunction()">
+                                <div class="arrow2"></div>
+                                <label for="password">Password</label>
+                                <input type="password" class="form__password" id="password" oninput="testFunction()">
+                                <div class="arrow3"></div>
+                                <label class="form__checkbox"><input type="checkbox" id="checkbox" onchange="testFunction()">Accept <u>Privacy Statementu</u>  and <u>Terms & Conditions</u></label>
+                                <div class="error">Please agree to continue</div>
+                                <div class="form__links">
+                                    <a href="../index.html">Back</a>
+                                    <button type="submit" class="form__btn disabled" disabled>Create free account</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <div class="main__column">
+                <div class="main__title">Everything you need</div>
+                <ul class="mail__list">
+                    <li class="main__item">Unlimited Number of Campaigns</li>
+                    <li class="main__item">Unlimited Number of Domains</li>
+                    <li class="main__item">All Products Included</li>
+                    <li class="main__item">All Features Included</li>
+                    <li class="main__item">All this and much more….</li>
+                </ul>
+                <div class="main__subtitle">Trusted by many industry leaders</div>
+                <div class="main__row">
+                    <div class="main__techlogo"></div>
+                    <div class="main__techlogo"></div>
+                    <div class="main__techlogo"></div>
+                    <div class="main__techlogo"></div>
+                    <div class="main__techlogo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="modal">
+    <div class="modal__block">
+        <div class="modal__close">X</div>
+        <div class="modal__title">Privacy Statement </div>
+        <div class="modal__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.
+            <p>Ornare massa eget egestas purus viverra accumsan. Mattis rhoncus urna neque viverra justo nec. Adipiscing diam donec adipiscing tristique risus nec feugiat. Amet massa vitae tortor condimentum. At varius vel pharetra vel. Porttitor eget dolor morbi non arcu risus quis varius. Id donec ultrices tincidunt arcu. Aliquet enim tortor at auctor urna nunc id cursus. Rhoncus dolor purus non enim praesent elementum facilisis leo.</p>
+        </div>
+        <div class="modal__subtitle">Amet massa vitae tortor</div>
+        <div class="modal__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
