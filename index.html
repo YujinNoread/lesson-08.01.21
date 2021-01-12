@@ -19,44 +19,46 @@
                     <div class="main__logo">
                         <img src="img/logo.png" alt="">
                     </div>
-                    <div class="form__title">Try <span class="pink">Met Jip</span> for free</div>
+                    <div class="form__title">Try <span class="brand">Met Jip</span> for free</div>
                     <div class="form__text">Try Met Jip for free for 14 days. Do you already have a login than you can. <a href="index.html">Login here</a></div>
                     <div class="main__login">
                         <form method="LINK" action="second/index.html" class="main__form-login">
                             <div class="main__row">
                                 <div class="main__columns">
                                   <label for="fullname">Fullname</label>
-                                  <input type="text" class="form__fullname" id="fullname" oninput="testFunction()">
+                                  <input type="text" class="form__fullname" id="fullname" oninput="handleFullName()">
                                   <div class="arrow"></div>
                                 </div>
                                 <div class="main__columns">
                                     <label for="firstname">Firstname</label>
-                                    <input type="text" class="form__firstname" id="firstname" oninput="testFunction()">
+                                    <input type="text" class="form__firstname" id="firstname" oninput="handleFirstName()">
                                     <div class="arrow2"></div>
                                 </div>
                             </div>
-                            <input type="email" class="form__email" placeholder="Email" id="email" oninput="testFunction()">
+                            <input type="email" class="form__email" placeholder="Email" id="email" oninput="handleEmail()">
                             <div class="error">Please give us some details</div>
-                            <button type="submit" class="form__btn disabled" disabled onclick=" location.href='second/index.html'  ">Next</button>
+                            <button type="submit" class="form__btn disabled" disabled>Next</button>
                         </form>
                     </div>
                 </div>
                 <div class="main__column">
-                    <div class="main__title">Everything you need</div>
-                    <ul class="mail__list">
-                        <li class="main__item">Unlimited Number of Campaigns</li>
-                        <li class="main__item">Unlimited Number of Domains</li>
-                        <li class="main__item">All Products Included</li>
-                        <li class="main__item">All Features Included</li>
-                        <li class="main__item">All this and much more….</li>
-                    </ul>
-                    <div class="main__subtitle">Trusted by many industry leaders</div>
-                    <div class="main__row">
-                        <div class="main__techlogo"></div>
-                        <div class="main__techlogo"></div>
-                        <div class="main__techlogo"></div>
-                        <div class="main__techlogo"></div>
-                        <div class="main__techlogo"></div>
+                    <div class="side__body">
+                        <div class="main__title">Everything you need</div>
+                        <ul class="mail__list">
+                            <li class="main__item">Unlimited Number of Campaigns</li>
+                            <li class="main__item">Unlimited Number of Domains</li>
+                            <li class="main__item">All Products Included</li>
+                            <li class="main__item">All Features Included</li>
+                            <li class="main__item">All this and much more….</li>
+                        </ul>
+                        <div class="main__subtitle">Trusted by many industry leaders</div>
+                        <div class="main__row">
+                            <div class="main__techlogo"></div>
+                            <div class="main__techlogo"></div>
+                            <div class="main__techlogo"></div>
+                            <div class="main__techlogo"></div>
+                            <div class="main__techlogo"></div>
+                        </div>
                     </div>
                 </div>
             </div>

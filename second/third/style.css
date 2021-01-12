@@ -71,9 +71,11 @@ body{
 }
 @media (max-width:767px) {
     .container{
-        width: 405px;
+        min-width: 320px;
+        width: 100%;
     }
     .main__text{
-        font-size: 14px;
+        font-size: 11px;
+        line-height: 28px;
     }
 }

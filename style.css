@@ -163,10 +163,10 @@ form input{
     opacity: 1;
 }
 
-.red{
+.invalid{
     border-bottom: 2px solid #FF1E1E;
 }
-.red:focus{
+.invalid:focus{
     border-bottom: 2px solid #FF1E1E;
 }
 
@@ -225,18 +225,6 @@ form input{
     font-size: 18px;
     line-height: 22px;
 }
-
-.main__techlogo{
-    background-image: url('img/techlogo.png');
-    width: 88px;
-    height: 24px;
-    margin-top: 25px;
-    margin-left: 20px;
-}
-.main__techlogo:nth-child(1),.main__techlogo:nth-child(4){
-    margin-left: 0;
-}
-
 body{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: normal;
@@ -290,11 +278,11 @@ body{
     line-height: 24px;
     padding-right: 40px;
 }
-.pink{
+.brand{
     position: relative;
     z-index: 1;
 }
-.pink:after{
+.brand:after{
     content: '';
     position: absolute;
     width: 100%;
@@ -402,10 +390,10 @@ form input{
     display: block;
     opacity: 1;
 }
-.red{
+.invalid{
     border-bottom: 2px solid #FF1E1E;
 }
-.red:focus{
+.invalid:focus{
     border-bottom: 2px solid #FF1E1E;
 }
 
@@ -470,10 +458,11 @@ form input{
     width: 88px;
     height: 24px;
     margin-top: 25px;
-    margin-left: 20px;
 }
-.main__techlogo:nth-child(1),.main__techlogo:nth-child(4){
-    margin-left: 0;
+.side__body .main__row{
+    display: grid;
+    grid-template: 1fr / repeat(3,108px);
+    grid-auto-flow: row;
 }
 @media (max-width:767px) {
     .main__form .main__row {
@@ -486,37 +475,36 @@ form input{
         top: 50px;
     }
     .container{
-        width: 405px;
+        width: 320px;
     }
     .main__row{
         flex-wrap: wrap;
     }
     .main__form{
-        padding: 0 40px 137px 40px;
+        padding: 0 10px 137px 10px;
     }
     .main__column{
-        padding: 63px 40px 240px 40px;
+        padding: 63px 10px 240px 10px;
         background-position: top right;
     }
     .main__columns:last-child{
         margin-left: 0;
     }
-    .main__columns{
-        flex: 0 0 325px;
-    }
     .form__fullname{
-
-        width: 320px;
+        width: 296px;
     }
     .form__firstname{
 
-        width: 320px;
+        width: 296px;
     }
     .form__email{
 
-        width: 320px;
+        width: 296px;
     }
     .form__btn{
         margin: 120px auto 0 auto;
+    }
+    .side__body .main__row{
+        grid-template: 1fr / repeat(3,100px);
     }
 }

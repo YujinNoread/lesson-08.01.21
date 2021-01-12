@@ -1,37 +1,61 @@
-function add(item,red){
-    if(red===undefined){
+function addClass(item, invalid) {
+    if (invalid === undefined) {
         item.classList.add("visible")
-    }else {
+    } else {
         item.classList.add("visible")
-        red.classList.add("red")
+        invalid.classList.add("invalid")
     }
 }
-function remove(item,red){
-    if (red===undefined){
+
+function removeClass(item, invalid) {
+    if (invalid === undefined) {
         item.classList.remove("visible")
-    }else {
+    } else {
         item.classList.remove("visible")
-        red.classList.remove("red")
+        invalid.classList.remove("invalid")
     }
 }
-function testFunction() {
+function handleFullName(){
+    let formFullName = document.querySelector('.form__fullname')
+    let arrow = document.querySelector('.arrow');
+
+    formFullName.value.length > 0 ? addClass(arrow) : removeClass(arrow)
+    validForm();
+}
+function handleFirstName(){
+    let formFirstName = document.querySelector('.form__firstname')
+    let arrow2 = document.querySelector('.arrow2');
+
+    formFirstName.value.length > 0 ? addClass(arrow2) : removeClass(arrow2);
+    validForm();
+}
+function handleEmail(){
+    let formEmail = document.querySelector('.form__email')
+    let error = document.querySelector(".error")
+    let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    formEmail.value.length > 0 && reg.test(formEmail.value) ? removeClass(error, formEmail) : addClass(error, formEmail)
+    validForm();
+}
+function validForm(){
     let formFullName = document.querySelector('.form__fullname')
     let formFirstName = document.querySelector('.form__firstname')
     let formEmail = document.querySelector('.form__email')
-    let arrow = document.querySelector('.arrow');
-    let arrow2 = document.querySelector('.arrow2');
-    let error = document.querySelector(".error")
     let formBtn = document.querySelector(".form__btn")
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    formFullName.value.length>0 ? add(arrow) : remove(arrow)
-    formFirstName.value.length>0 ? add(arrow2) : remove(arrow2)
-    formEmail.value.length>0&&reg.test(formEmail.value) ? remove(error,formEmail) : add(error,formEmail)
-    if(formFullName.value.length>0&&formFirstName.value.length>0&&formEmail.value.length>0&&reg.test(formEmail.value)){
-        formBtn.removeAttribute('disabled','disabled')
+    let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    if (formFullName.value.length > 0
+        && formFirstName.value.length > 0
+        && formEmail.value.length > 0
+        && reg.test(formEmail.value)) {
+        formBtn.removeAttribute('disabled')
         formBtn.classList.remove('disabled')
-    } else if(formFullName.value.length>0||formFirstName.value.length>0||formEmail.value.length>0||reg.test(formEmail.value)){
+    } else if (formFullName.value.length > 0
+        || formFirstName.value.length > 0
+        || formEmail.value.length > 0
+        || reg.test(formEmail.value)) {
         formBtn.classList.add('disabled')
-        formBtn.setAttribute('disabled','disabled')
+        formBtn.setAttribute('disabled', 'disabled')
     }
 }
 

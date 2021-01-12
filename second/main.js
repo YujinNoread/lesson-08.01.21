@@ -1,77 +1,121 @@
-function add(item,red){
-    if(red===undefined){
+var element = document.getElementById('phonenumber');
+var maskOptions = {
+    mask: '+{38}(000)000-00-00'
+};
+
+
+function addClass(item,invalid){
+    if(invalid===undefined){
         item.classList.add("visible")
     }else {
         item.classList.add("visible")
-        red.classList.add("red")
+        invalid.classList.add("invalid")
     }
 }
-function remove(item,red){
-    if (red===undefined){
+function removeClass(item,invalid){
+    if (invalid===undefined){
         item.classList.remove("visible")
     }else {
         item.classList.remove("visible")
-        red.classList.remove("red")
+        invalid.classList.remove("invalid")
     }
 }
-function testFunction() {
+
+function handleCompany(){
+    let formCompany = document.querySelector('.form__company')
+    let arrow = document.querySelector('.arrow');
+
+    if(formCompany.value.length>0){
+        arrow.classList.add('visible')
+        formCompany.classList.remove('invalid')
+    } else{
+        arrow.classList.remove('visible')
+        formCompany.classList.add('invalid')
+    }
+
+    validForm();
+}
+function handlePhone(){
+    let formPhoneNumber = document.querySelector('.form__phonenumber')
+    let arrow2 = document.querySelector(".arrow2");
+    var mask = IMask(element, maskOptions);
+
+    if(mask.unmaskedValue.length===12){
+        arrow2.classList.add('visible')
+        formPhoneNumber.classList.remove('invalid')
+    } else{
+        arrow2.classList.remove('visible')
+        formPhoneNumber.classList.add('invalid')
+    }
+
+    validForm();
+}
+function handlePassword(){
+    let formPassword = document.querySelector('.form__password')
+    let arrow3 = document.querySelector(".arrow3");
+
+    if(formPassword.value.length>0){
+        arrow3.classList.add('visible')
+        formPassword.classList.remove('invalid')
+    } else{
+        arrow3.classList.remove('visible')
+        formPassword.classList.add('invalid')
+    }
+
+    validForm();
+}
+function handleCheckbox(){
+    let checkbox = document.getElementById('checkbox')
+    let error = document.querySelector(".error")
+
+    checkbox.checked ? removeClass(error) : addClass(error)
+
+    validForm();
+}
+function validForm(){
     let formCompany = document.querySelector('.form__company')
     let formPhoneNumber = document.querySelector('.form__phonenumber')
     let formPassword = document.querySelector('.form__password')
     let checkbox = document.getElementById('checkbox')
-    let error = document.querySelector(".error")
-    let arrow = document.querySelector(".arrow");
-    let arrow2 = document.querySelector(".arrow2");
-    let arrow3 = document.querySelector(".arrow3");
     let formBtn = document.querySelector(".form__btn")
-    checkbox.checked ? remove(error) : add(error)
-    if(formCompany.value.length>0){
-        arrow.classList.add('visible')
-        formCompany.classList.remove('red')
-    } else{
-        arrow.classList.remove('visible')
-        formCompany.classList.add('red')
-    }
-    if(formPhoneNumber.value.length===13){
-        arrow2.classList.add('visible')
-        formPhoneNumber.classList.remove('red')
-    } else{
-        arrow2.classList.remove('visible')
-        formPhoneNumber.classList.add('red')
-    }
-    if(formPassword.value.length>0){
-        arrow3.classList.add('visible')
-        formPassword.classList.remove('red')
-    } else{
-        arrow3.classList.remove('visible')
-        formPassword.classList.add('red')
-    }
-    if(formCompany.value.length>0&&formPhoneNumber.value.length>0&&formPassword.value.length>0&&checkbox.checked){
+
+    if(formCompany.value.length>0
+        &&formPhoneNumber.value.length>0
+        &&formPassword.value.length>0
+        &&checkbox.checked){
         formBtn.removeAttribute('disabled')
         formBtn.classList.remove('disabled')
-    } else if(formCompany.value.length>0||formPhoneNumber.value.length>0||formPassword.value.length>0){
+    } else if(formCompany.value.length>0
+        ||formPhoneNumber.value.length>0
+        ||formPassword.value.length>0){
         formBtn.classList.add('disabled')
         formBtn.setAttribute("disabled", "disabled")
     }
 }
 
-
 let modal = document.querySelector(".modal");
 let closeBtn = document.querySelector(".modal__close")
 let checkbox = document.getElementById("checkbox")
-checkbox.onclick = function (){
-    {if (checkbox.checked){
+let links = document.querySelectorAll(".links")
+
+links.forEach((item)=> {
+    item.addEventListener("click", function (){
         modal.classList.add("visible")
-    }}
-}
+        checkbox.checked=false;
+    })
+})
+
 modal.addEventListener("click",function (event){
     if (event.target === modal){
         modal.classList.remove("visible")
     }
 })
+
 closeBtn.addEventListener("click", function (){
     modal.classList.remove("visible");
 })
+
+
 
 
 
